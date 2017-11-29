@@ -17,15 +17,7 @@ public class Main {
 
         System.out.println("Connected.");
 
-        try {
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM User");
-            while (rs.next()) {
-                System.out.println("User: " + rs.getString("UserName"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        MSLLogin mslLogin = new MSLLogin(conn);
 
     }
 
