@@ -76,6 +76,7 @@ public class MSLLogin extends JFrame implements ActionListener {
     private String toMD5(String md5) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
+            
             byte[] array = md.digest(md5.getBytes());
             StringBuffer sb = new StringBuffer();
 
