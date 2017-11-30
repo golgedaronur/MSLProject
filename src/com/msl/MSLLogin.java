@@ -59,8 +59,9 @@ public class MSLLogin extends JFrame implements ActionListener {
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
                 user = new User(userName, password, conn);
-                JOptionPane.showMessageDialog(this, "Welcome, " + user.getFullName());
+                MSLMainFrame mainFrame = new MSLMainFrame(user, conn);
                 setVisible(false);
+                mainFrame.setVisible(true);
 
             } else
                 JOptionPane.showMessageDialog(this, "User cannot be found.\nWrong Username or Password");
@@ -76,12 +77,12 @@ public class MSLLogin extends JFrame implements ActionListener {
     private String toMD5(String md5) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
-            
+
             byte[] array = md.digest(md5.getBytes());
             StringBuffer sb = new StringBuffer();
 
-            for (int i = 0; i < array.length; ++i)
-                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
+            for (int i = 0; i < array.length; i++)
+                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1, 3));
 
             return sb.toString();
 
