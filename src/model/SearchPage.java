@@ -24,7 +24,7 @@ public abstract class SearchPage extends Page {
 
     public abstract void loadSearchPage();
 
-    
+
 
     protected void AddComponent(KeyComponent keyComponent) {
         searchKeys.add(keyComponent);
