@@ -16,8 +16,8 @@ public class SearchBrand extends SearchPage {
     }
 
     public void loadSearchPage() {
-        AddKeyComponent("Brand ID", "BrandID", new JTextField());
-        AddKeyComponent("Brand Name", "BrandName", new JTextField());
+        addKeyComponent("Brand ID", "BrandID", new JTextField());
+        addKeyComponent("Brand Name", "BrandName", new JTextField());
     }
 
     public ArrayList<ListObject> displayResults(ResultSet row) {
@@ -25,6 +25,7 @@ public class SearchBrand extends SearchPage {
 
         listObjects.add(new DisplayComponent("Brand ID", "BrandID"));
         listObjects.add(new DisplayComponent("Brand Name", "BrandName"));
+        listObjects.add(new LinkComponent("Display", new DisplayBrand(new Brand(row), getUser(), getMSLMainFrame())));
 
         return listObjects;
     }

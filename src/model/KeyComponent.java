@@ -72,8 +72,21 @@ public class KeyComponent {
             return ((JToggleButton) component).isSelected();
         else if (component instanceof JComboBox)
             return ((JComboBox) component).getSelectedItem();
+        else if (component instanceof JLabel)
+            return ((JLabel) component).getText();
 
         return null;
+    }
+
+    public void setData(Object data) {
+        if (component instanceof  JTextComponent)
+            ((JTextField) component).setText(data.toString());
+        else if (component instanceof JToggleButton)
+            ((JToggleButton) component).setSelected((boolean) data);
+        else if (component instanceof JComboBox)
+            ((JComboBox) component).setSelectedItem(data);
+        else if (component instanceof JLabel)
+            ((JLabel) component).setText(data.toString());
     }
 
     public String createWhereClause() {

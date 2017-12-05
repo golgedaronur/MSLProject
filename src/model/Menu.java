@@ -20,6 +20,12 @@ public class Menu extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        page.removeAll();
+        page.preLoadPage();
+        page.loadPage();
+        page.revalidate();
+        page.repaint();
+
         page.getMSLMainFrame().changePage(page);
     }
 }

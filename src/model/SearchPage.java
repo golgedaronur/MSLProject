@@ -44,15 +44,15 @@ public abstract class SearchPage extends Page {
         add(topPanel, BorderLayout.NORTH);
     }
 
-    protected void AddKeyComponent(KeyComponent keyComponent) {
+    protected void addKeyComponent(KeyComponent keyComponent) {
         searchKeys.add(keyComponent);
     }
 
-    protected void AddKeyComponent(String text, String columnName, JComponent component) {
+    protected void addKeyComponent(String text, String columnName, JComponent component) {
         searchKeys.add(new KeyComponent(text, columnName, component, true, false));
     }
 
-    protected void AddKeyComponent(String text, String columnName, JComponent component, boolean isEnable) {
+    protected void addKeyComponent(String text, String columnName, JComponent component, boolean isEnable) {
         searchKeys.add(new KeyComponent(text, columnName, component, isEnable, false));
     }
 
