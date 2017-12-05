@@ -62,6 +62,12 @@ public abstract class AddPage extends Page {
     }
 
     public void actionPerformed(ActionEvent e) {
+        for (KeyComponent data : datas) {
+            if (data.isRequired() && data.getData().toString().equals("")) {
+                JOptionPane.showMessageDialog(this, data.getText() + " cannot be empty!", "Required Input Empty!", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
         KeyComponent list[] = new KeyComponent[datas.size()];
         Add(datas.toArray(list));
     }

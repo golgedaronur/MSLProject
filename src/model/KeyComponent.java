@@ -32,9 +32,9 @@ public class KeyComponent {
 
         JLabel textLabel = new JLabel();
         if (isRequired)
-            textLabel.setText("<html>" + text + "<font color=red>*</font></html>");
+            textLabel.setText("<html>" + text + ": <font color=red>*</font></html>");
         else
-            textLabel.setText(text);
+            textLabel.setText(text + ": ");
 
         component.setEnabled(isEnable);
 
@@ -74,5 +74,18 @@ public class KeyComponent {
             return ((JComboBox) component).getSelectedItem();
 
         return null;
+    }
+
+    public String createWhereClause() {
+        String data = getData().toString();
+
+        if (data.equals(""))
+            return "";
+        else if (data.equals("-"))
+            return columnName + " = ''";
+        else if (data.indexOf('%') != -1)
+            return columnName + " LIKE '" + data + "'";
+        else
+            return columnName + " = '" + data + "'";
     }
 }

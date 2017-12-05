@@ -2,7 +2,6 @@ package model;
 
 import javax.swing.*;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class LinkComponent extends ListObject {
     private Page page;

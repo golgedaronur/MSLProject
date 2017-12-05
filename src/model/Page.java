@@ -13,6 +13,9 @@ public abstract class Page extends JPanel implements ActionListener {
     private MSLMainFrame mainFrame;
 
     public Page(String pageName, User user, MSLMainFrame mainFrame) {
+        removeAll();
+        revalidate();
+        repaint();
         this.pageName = pageName;
         this.user = user;
         this.mainFrame = mainFrame;

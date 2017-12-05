@@ -17,7 +17,7 @@ public class AddBrand extends AddPage {
     }
 
     public void loadAddPage() {
-        AddComponent("Brand name: ", "BrandName", new JTextField());
+        AddComponent("Brand name", "BrandName", new JTextField());
     }
 
     public void Add(KeyComponent[] datas) {

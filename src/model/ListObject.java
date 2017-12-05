@@ -11,4 +11,8 @@ public abstract class ListObject {
     }
 
     abstract JComponent draw(ResultSet row);
+
+    public String getTitleName() {
+        return titleName;
+    }
 }

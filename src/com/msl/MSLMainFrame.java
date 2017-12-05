@@ -2,6 +2,7 @@ package com.msl;
 
 import Pages.AddBrand;
 import Pages.MainPage;
+import Pages.SearchBrand;
 import model.Page;
 import model.User;
 import model.Menu;
@@ -42,6 +43,7 @@ public class MSLMainFrame extends JFrame implements ActionListener {
 
         JMenu brand = new JMenu("Brand");
         brand.add(new Menu(new AddBrand(user, this)));
+        brand.add(new Menu(new SearchBrand(user, this)));
 
         menu.add(brand);
 
