@@ -1,5 +1,6 @@
 package com.msl;
 
+import javax.swing.*;
 import java.sql.*;
 
 public class Main {
@@ -12,6 +13,7 @@ public class Main {
         Connection conn = Connect();
         if (conn == null) {
             System.err.println("Connection failed.");
+            JOptionPane.showMessageDialog(null, "Database could not be connected.", "Connection failed", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
