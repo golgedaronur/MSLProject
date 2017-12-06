@@ -1,6 +1,7 @@
 package Pages;
 
 import com.msl.MSLMainFrame;
+import jdk.nashorn.internal.scripts.JO;
 import model.AddPage;
 import model.KeyComponent;
 import model.User;
@@ -26,8 +27,10 @@ public class AddBrand extends AddPage {
             String brandName = datas[0].getData().toString();
             String sql = "INSERT INTO Brand (BrandName) VALUE ('" + brandName + "')";
 
-            conn.createStatement().execute(sql);
-            JOptionPane.showMessageDialog(this, brandName + " has been created.");
+            if (conn.createStatement().execute(sql))
+                JOptionPane.showMessageDialog(this, brandName + " has been created.");
+            else
+                JOptionPane.showMessageDialog(this, brandName + " could not be created.", "Error!", JOptionPane.ERROR_MESSAGE);
 
         } catch (SQLException e) {
             e.printStackTrace();
