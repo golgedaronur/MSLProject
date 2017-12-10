@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class AddBrand extends AddPage {
+    
+   
     private static final String PAGE_NAME = "PAGE_BRAND_ADD";
 
     public AddBrand(User user, MSLMainFrame mainFrame) {
